@@ -45,8 +45,6 @@
 			sensor-bindings = <
 				&inc_dec_kp PAGE_UP PAGE_DOWN
 				&inc_dec_kp C_VOL_DN C_VOL_UP
-				&inc_dec_kp LEFT RIGHT
-				&inc_dec_kp TAB LS(TAB)
 			>;
 		};
 
@@ -74,8 +72,6 @@
 			sensor-bindings = <
 				&inc_dec_kp PAGE_UP PAGE_DOWN
 				&inc_dec_kp C_VOL_DN C_VOL_UP
-				&inc_dec_kp LEFT RIGHT
-				&inc_dec_kp TAB LS(TAB)
 			>;
 		};
 
@@ -103,8 +99,6 @@
 			sensor-bindings = <
 				&inc_dec_kp PAGE_UP PAGE_DOWN
 				&inc_dec_kp C_VOL_DN C_VOL_UP
-				&inc_dec_kp LEFT RIGHT
-				&inc_dec_kp TAB LS(TAB)
 			>;
 		};
 
@@ -132,8 +126,6 @@
 			sensor-bindings = <
 				&inc_dec_kp PAGE_UP PAGE_DOWN
 				&inc_dec_kp C_VOL_DN C_VOL_UP
-				&inc_dec_kp LEFT RIGHT
-				&inc_dec_kp TAB LS(TAB)
 			>;
 		};
 
@@ -161,8 +153,6 @@
 			sensor-bindings = <
 				&inc_dec_kp PAGE_UP PAGE_DOWN
 				&inc_dec_kp C_VOL_DN C_VOL_UP
-				&inc_dec_kp LEFT RIGHT
-				&inc_dec_kp TAB LS(TAB)
 			>;
 		};
 
@@ -190,8 +180,6 @@
 			sensor-bindings = <
 				&inc_dec_kp PAGE_UP PAGE_DOWN
 				&inc_dec_kp C_VOL_DN C_VOL_UP
-				&inc_dec_kp LEFT RIGHT
-				&inc_dec_kp TAB LS(TAB)
 			>;
 		};
 
@@ -219,8 +207,6 @@
 			sensor-bindings = <
 				&inc_dec_kp PAGE_UP PAGE_DOWN
 				&inc_dec_kp C_VOL_DN C_VOL_UP
-				&inc_dec_kp LEFT RIGHT
-				&inc_dec_kp TAB LS(TAB)
 			>;
 		};
 
