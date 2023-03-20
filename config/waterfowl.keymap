@@ -106,7 +106,7 @@
 /* 3 L_MEDIA
  *
  * ,----------------------------------.                      ,----------------------------------.
- * |      |      |      |      |      |                      |      |      |      |      |      |
+ * |      |      |      |      | BTCLR|                      | BT 0 | BT 1 | BT 2 | BT 3 | BT 4 |
  * |------+------+------+------+------|                      |------+------+------+------+------|
  * |  CMD |  ALT | CTRL | Shift|      |                      | Prev | VoDn | VoUp | Next |      |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
@@ -117,7 +117,7 @@
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 			bindings = <
-	&none		&none		&none		&none		&none			&none		&none			&none			&none		&none
+	&none		&none		&none		&none		&bt BT_CLR		&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	&bt BT_SEL 4
 	&kp LGUI 	&kp LALT	&kp LCTRL	&kp LSHFT	&none			&kp C_PREV	&kp C_VOL_DN	&kp C_VOL_UP	&kp C_NEXT	&none
 	&none		&none		&none		&none		&none			&none		&none			&none			&none		&none
 	&kp N1		&none		&none		&trans		&kp N2			&kp N3		&kp C_STOP		&kp C_PP		&kp C_MUTE	&kp N4
