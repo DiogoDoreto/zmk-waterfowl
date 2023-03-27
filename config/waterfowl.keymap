@@ -17,8 +17,20 @@
 #define L_SYM 5
 #define L_FUN 6
 
+&sk {
+	quick-release;
+};
+
 / {
 	behaviors {
+		hh: behavior_homerow_hold {
+			compatible = "zmk,behavior-hold-tap";
+			label = "HOMEROW_HOLD";
+			#binding-cells = <2>;
+			flavor = "tap-preferred";
+			tapping-term-ms = <200>;
+			bindings = <&kp>, <&kp>;
+		};
 		lh: behavior_layer_hold {
 			compatible = "zmk,behavior-hold-tap";
 			label = "LAYER_HOLD";
@@ -26,6 +38,21 @@
 			flavor = "hold-preferred";
 			tapping-term-ms = <200>;
 			bindings = <&mo>, <&kp>;
+		};
+		lhs: behavior_layer_hold_sticky {
+			compatible = "zmk,behavior-hold-tap";
+			label = "LAYER_HOLD_STICKY";
+			#binding-cells = <2>;
+			flavor = "hold-preferred";
+			tapping-term-ms = <200>;
+			bindings = <&mo>, <&sk>;
+		};
+		caps: caps_char_word {
+			compatible = "zmk,behavior-tap-dance";
+			label = "TAP_DANCE_0";
+			#binding-cells = <0>;
+			tapping-term-ms = <200>;
+			bindings = <&lhs L_FUN LSHFT>, <&caps_word>;
 		};
 	};
 	keymap {
@@ -42,14 +69,14 @@
  * |   Z  |   X  |   C  |   V  |   B  |  | Num |    | Nav |  |   N  |   M  |   ,  |   .  |   /  |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----. 
- *          |  1  |   | ESC | SPACE | TAB  |            |  BS  | ENTER | DEL |   |  4  |	
+ *          |  1  |   | ESC | SPACE | TAB  |            |  BS | ENTER | Caps |   |  4  |	
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 			bindings = <
 	&kp Q		&kp W		&kp E		&kp R		&kp T			&kp Y	&kp U		&kp I		&kp O		&kp P
-	&mt LGUI A	&mt LALT S	&mt LCTRL D	&mt LSHFT F	&kp G			&kp H	&mt LSHFT J	&mt LCTRL K	&mt LALT L	&mt LGUI APOS
-	&kp Z		&mt RALT X	&kp C		&kp V		&kp B			&kp N	&kp M		&kp COMMA	&mt RALT DOT	&kp FSLH
-	&kp N1	&lh L_MEDIA ESC	&lh L_NAV SPACE	&lh L_MOUSE TAB	&tog L_NUM	&tog L_NAV	&lh L_SYM BSPC	&lh L_NUM RET	&lh L_FUN DEL	&kp N4
+	&hh LGUI A	&hh LALT S	&hh LCTRL D	&hh LSHFT F	&kp G			&kp H	&hh LSHFT J	&hh LCTRL K	&hh LALT L	&hh LGUI APOS
+	&kp Z		&hh RALT X	&kp C		&kp V		&kp B			&kp N	&kp M		&kp COMMA	&hh RALT DOT	&kp FSLH
+	&kp N1	&lh L_MEDIA ESC	&lh L_NAV SPACE	&lh L_MOUSE TAB	&tog L_NUM	&tog L_NAV	&lh L_SYM BSPC	&lh L_NUM RET	&caps	&kp N4
 			>;
 
 			sensor-bindings = <
@@ -236,5 +263,5 @@
 
 	};
 };
-/* vim:ft=dts:ts=4
+/* vim:ft=dts:ts=4:sw=4:noet
 */
