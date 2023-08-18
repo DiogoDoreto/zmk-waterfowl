@@ -5,7 +5,7 @@
 Preparing the container:
 
 ```
-podman create -it --name=zmk --mount="type=bind,source=/d/git/zmk/app,destination=/workspaces/app" --mount="type=bind,source=/d/git/zmk-waterfowl/config,target=/workspaces/zmk-config" --mount="type=volume,source=zmk-zephyr,target=/workspaces/zephyr" --mount="type=volume,source=zmk-zephyr-modules,target=/workspaces/modules" --mount="type=volume,source=zmk-zephyr-tools,target=/workspaces/tools" docker.io/zmkfirmware/zmk-dev-arm:3.0 /bin/bash
+podman create -it --name=zmk --mount="type=bind,source=/d/git/zmk/app,destination=/workspaces/app" --mount="type=bind,source=/d/git/zmk-waterfowl/config,target=/workspaces/zmk-config" --mount="type=volume,source=zmk-zephyr,target=/workspaces/zephyr" --mount="type=volume,source=zmk-zephyr-modules,target=/workspaces/modules" --mount="type=volume,source=zmk-zephyr-tools,target=/workspaces/tools" docker.io/zmkfirmware/zmk-dev-arm:3.2 /bin/bash
 
 podman start zmk
 podman exec -w=/workspaces zmk west init -l app
