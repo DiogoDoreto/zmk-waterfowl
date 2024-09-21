@@ -92,20 +92,20 @@
 /* 1 L_NAV
  *
  * ,----------------------------------.                      ,----------------------------------.
- * |  ⌘Q  |  ⌘W  |      |      |      |                      |      |      |      |      |      |
+ * |  ^Q  |  ^W  |      |      |      |                      |      |      |      |      |      |
  * |------+------+------+------+------|                      |------+------+------+------+------|
- * |  ⌘A  |  ALT | CTRL | Shift|      |                      | Left | Down |  Up  | Right| CAPSW|
+ * |  CMD |  ALT | CTRL |  ^F  |      |                      | Left | Down |  Up  | Right| CAPSW|
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * |  ⌘Z  |  ⌘X  |  ⌘C  |  ⌘V  |      |  |  2  |    |  3  |  | Home | PgDn | PgUp | End  | Ins  |
+ * |  ^Z  |  ^X  |  ^C  |  ^V  |  ^B  |  |  2  |    |  3  |  | Home | PgDn | PgUp | End  | Ins  |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |  1  |   |     |  (*)  |      |            |  BS  | ENTER | DEL |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 			bindings = <
-	&kp LG(Q)	&kp LG(W)	&none		&none		&none			&none		&none		&none		&none		&none
-	&mt LGUI LG(A)	&kp LALT	&kp LCTRL	&kp LSHFT	&none			&kp LEFT	&kp DOWN	&kp UP		&kp RIGHT	&caps_word
-	&kp LG(Z)	&kp LG(X)	&kp LG(C)	&kp LG(V)	&none			&kp HOME	&kp PG_DN	&kp PG_UP	&kp END		&kp INS
+	&kp LC(Q)	&kp LC(W)	&none		&none		&none			&none		&none		&none		&none		&none
+	&kp LGUI 	&kp LALT	&kp LCTRL	&mt LC(F) LSHFT	&none	&kp LEFT	&kp DOWN	&kp UP		&kp RIGHT	&caps_word
+	&kp LC(Z)	&kp LC(X)	&kp LC(C)	&kp LC(V)	&kp LC(B)		&kp HOME	&kp PG_DN	&kp PG_UP	&kp END		&kp INS
 	&kp N1		&none		&trans		&none		&kp N2			&tog L_NAV	&kp BSPC	&kp RET		&kp DEL		&kp N4
 			>;
 		};
