@@ -56,6 +56,33 @@
 			bindings = <&lhs L_FUN LSHFT>, <&caps_word>;
 		};
 	};
+	macros {
+		m_arrowfn: m_arrowfn {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_tap &kp EQUAL &kp LS(DOT) &kp SPACE>;
+		};
+		m_async: m_async {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_tap &kp A &kp S &kp Y &kp N &kp C &kp SPACE>;
+		};
+		m_const: m_const {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_tap &kp C &kp O &kp N &kp S &kp T &kp SPACE>;
+		};
+		m_function: m_function {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_tap &kp F &kp U &kp N &kp C &kp T &kp I &kp O &kp N &kp SPACE>;
+		};
+		m_return: m_return {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			bindings = <&macro_tap &kp R &kp E &kp T &kp U &kp R &kp N &kp SPACE>;
+		};
+	};
 	keymap {
 		compatible = "zmk,keymap";
 
@@ -114,21 +141,21 @@
 /* 2 L_NUMPAD
  *
  * ,----------------------------------.                      ,----------------------------------.
- * |      |      |      |      |      |                      |  /   |  7   |  8   |  9   |  -   |
+ * |      |      |      |return|      |                      |  /   |  7   |  8   |  9   |  -   |
  * |------+------+------+------+------|                      |------+------+------+------+------|
- * |  CMD |  ALT | CTRL | Shift|      |                      |  *   |  4   |  5   |  6   |  +   |
+ * | async|  ALT | CTRL | func |  =>  |                      |  *   |  4   |  5   |  6   |  +   |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * |      |      |      |      |      |  |  2  |    |NLock|  |  .   |  1   |  2   |  3   |      |
+ * |      |      | const|      |      |  |  2  |    |NLock|  |  .   |  1   |  2   |  3   |      |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |  1  |   |     |       |  (*) |            |  BS  |   0   | DEL |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 			bindings = <
-	&none		&none		&none		&none		&none			&kp KP_DIVIDE	&kp KP_N7	&kp KP_N8	&kp KP_N9	&kp KP_MINUS
-	&kp LGUI 	&kp LALT	&kp LCTRL	&kp LSHFT	&none			&kp KP_MULTIPLY	&kp KP_N4	&kp KP_N5	&kp KP_N6	&kp KP_PLUS
-	&none		&none		&none		&none		&none			&kp KP_DOT		&kp KP_N1	&kp KP_N2	&kp KP_N3	&none
-	&kp N1		&none		&none		&trans		&kp N2			&kp KP_NUMLOCK	&kp BSPC	&kp KP_N0	&kp DEL		&kp N4
+	&none		&none		&none		&m_return		&none			&kp KP_DIVIDE	&kp KP_N7	&kp KP_N8	&kp KP_N9	&kp KP_MINUS
+	&m_async 	&kp LALT	&kp LCTRL	&m_function	&m_arrowfn	&kp KP_MULTIPLY	&kp KP_N4	&kp KP_N5	&kp KP_N6	&kp KP_PLUS
+	&none		&none		&m_const	&none			&none			&kp KP_DOT		&kp KP_N1	&kp KP_N2	&kp KP_N3	&none
+	&kp N1		&none		&none		&trans			&kp N2			&kp KP_NUMLOCK	&kp BSPC	&kp KP_N0	&kp DEL	&kp N4
 			>;
 		};
 
