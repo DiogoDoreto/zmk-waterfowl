@@ -119,7 +119,7 @@
 /* 1 L_NAV
  *
  * ,----------------------------------.                      ,----------------------------------.
- * |  ^Q  |  ^W  |      |      |      |                      |      |      |      |      |      |
+ * |  ^Q  |  ^W  |      |      |      |                      |PrtScr|      |      |      |      |
  * |------+------+------+------+------|                      |------+------+------+------+------|
  * |  CMD |  ALT |  ^D  |  ^F  |      |                      | Left | Down |  Up  | Right| CAPSW|
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
@@ -130,7 +130,7 @@
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 			bindings = <
-	&kp LC(Q)	&kp LC(W)	&none		        &none	            &none		&none		&none		&none		&none		&none
+	&kp LC(Q)	&kp LC(W)	&none		        &none	            &none       &kp PSCRN	&none		&none		&none		&none
 	&kp LGUI 	&kp LALT	&mt LCTRL LC(D)	&mt LSHFT LC(F)	&none	    &kp LEFT	&kp DOWN	&kp UP		&kp RIGHT	&caps_word
 	&kp LC(Z)	&kp LC(X)	&kp LC(C)	        &kp LC(V)	        &kp LC(B)	&kp HOME	&kp PG_DN	&kp PG_UP	&kp END		&kp INS
 	&kp N1		&none		&trans		        &none		        &kp N2		&tog L_NAV	&kp BSPC	&kp RET		&kp DEL		&kp N4
